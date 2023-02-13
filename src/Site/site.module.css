@@ -1,0 +1,22 @@
+.header{
+    background:lightskyblue;
+    height: 100px;
+
+
+}
+.body{
+    display: flex;
+}
+.menu{
+    background: lightgrey;
+    width: 20%;
+    height: 700px;
+
+
+}
+.content{
+    background: skyblue;
+    width: 80%;
+    height: 700px;
+
+}
