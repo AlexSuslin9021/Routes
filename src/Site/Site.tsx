@@ -1,5 +1,9 @@
 import React from 'react';
 import s from './site.module.css'
+import {NavLink, Route, Routes,Navigate} from "react-router-dom";
+import dataState from "../state/dataState";
+import Pages from "../Pages";
+import {Error} from "../Error";
 
 export const Site = () => {
     return (
@@ -9,14 +13,18 @@ export const Site = () => {
             </div>
             <div className={s.body}>
                 <div className={s.menu}>
-                    <div> 1</div>
-                    <div> 2</div>
-                    <div> 3</div>
-                    <div> 4</div>
+                    <div><NavLink className={({isActive})=>isActive ? s.active: s.nav}  to={'/path/0'}>1</NavLink> </div>
+                    <div><NavLink className={({isActive})=>isActive ? s.active: s.nav}  to={'/path/1'}>2</NavLink> </div>
+                    <div><NavLink className={({isActive})=>isActive ? s.active: s.nav} to={'/path/2'}>3</NavLink> </div>
+                    <div><NavLink className={({isActive})=>isActive ? s.active: s.nav} to={'/path/3'}>4</NavLink> </div>
                 </div>
 
                 <div className={s.content}>
-                    content
+                  <Routes>
+                      <Route path={'/'} element={<Navigate to={'/path0'}/>}></Route>
+                        <Route path={'/path/:id'} element={<Pages data={dataState.pages}  />}></Route>
+                        <Route path={'/*'} element={<Error/>} ></Route>
+                  </Routes>
                 </div>
             </div>
         </>
