@@ -19,11 +19,12 @@
     width: 80%;
     height: 700px;
 
+
 }
 .active{
     /*background-color: white;*/
     height: 500px;
-    width: 30%;
+    width: 31%;
     color:#282c34;
     font-size: 30px;
     text-decoration: none;
